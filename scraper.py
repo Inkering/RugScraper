@@ -21,6 +21,7 @@ def getRugName(rugPage):
     except AttributeError:
         pass
 
+
 def getRugDesc(rugPage):
 
     try:
@@ -30,6 +31,7 @@ def getRugDesc(rugPage):
     # don't blow up if the html attribute isn't present for that id
     except AttributeError:
         pass
+
 
 def getRugLink(rugPage):
     try:
@@ -53,6 +55,7 @@ count = 410
 while (count < 411):
     item_id_list.append(str(count).zfill(5))
     count += 1
+
 
 # we need to be safe when opening and writing to the csv
 with open('rugs.csv', 'w') as f:
