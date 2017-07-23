@@ -21,6 +21,15 @@ def getRugName(rugPage):
     except AttributeError:
         pass
 
+def getRugDesc(rugPage):
+
+    try:
+        rugPage = rugPage.find("article", {"class": "article"})
+        item_desc = list(rugPage.children)[2]
+        return item_desc
+    # don't blow up if the html attribute isn't present for that id
+    except AttributeError:
+        pass
 
 def getRugLink(rugPage):
     try:
@@ -35,7 +44,7 @@ def getRugLink(rugPage):
 print("this program scrapes rugs")
 base_url = input("Please input the location of the rugs")
 
-# build a id index of numbersb
+# build a id index of numbers
 item_id_list = []
 
 # this fills an array item_id_list with increasingly large numbers in
